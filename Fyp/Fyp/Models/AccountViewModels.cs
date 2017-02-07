@@ -60,6 +60,9 @@ namespace Fyp.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Display(Name = "Trusted Image")]
+        public bool Image { get; set; }
     }
 
     public class RegisterViewModel
@@ -79,6 +82,13 @@ namespace Fyp.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Trusted Image")]
+        [Compare("Image", ErrorMessage = " The tusted image you have selected do not match")]
+        public bool Image { get; set; }
+
+
     }
 
     public class ResetPasswordViewModel
